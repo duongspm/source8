@@ -1,0 +1,31 @@
+chay chu address
+
+social header dung chung footer
+
+dang ky nhiu hinh anh
+
+tin tuc: slick 
+
+
+fanpage: fb binh thuong
+
+
+news
+	blog
+	chinh sach
+	du an
+newsletter
+	ht, sdt, email, nd
+photo
+	slide
+	logo
+	banner
+	fav
+	social
+	image dang ky
+	video
+product
+	product
+static
+	giới thiệu
+	lien he

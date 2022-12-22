@@ -20,7 +20,83 @@
   20%, 40% { -webkit-transform: rotate(25deg) scale(1) skew(1deg); } }
 
 /* Main */
-body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 14px; }
+/* body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; font-size: 14px; } */
+/* need */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+body {
+  min-height: 100vh;
+  font-size: 14px;
+	min-width: 1349px;
+	font-family: var(--font-primary);
+	line-height: 1.5;
+}
+@font-face {
+  font-family: Muli-Bold;
+  src: url("../fonts/Muli-Bold.ttf");
+}
+.wrapper{
+	max-width: 1230px;
+	margin: 0 auto;
+}
+/* need */
+:root {
+	--font-primary:'Mulish', sans-serif;
+	--font-primary-Black:'MulishBlack', sans-serif;
+
+	--font-heading: 'UTMAvo', sans-serif;
+	--font-headingB: 'UTMAvoB', sans-serif;
+	--font-title:'Oswald', sans-serif;
+	--color-primary:#FFCB00;
+
+	--color-red: #ec2d3f;
+	--color-medium-red: #cc2c32;
+	--color-dark-red: #c31829;
+	--color-green: #28a745;
+	--color-dark-green: #207d36;
+	--color-black: #212529;
+	--color-gray: #6c757d;
+}
+.flex{width:100%;display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}
+.flexnowidth{display:-webkit-box;display:-moz-box;display:-ms-flexbox;display:-webkit-flex;display:flex}
+.flex_odd_even{flex-direction:row-reverse}.flexwrap{flex-wrap:wrap;-moz-flex-wrap:wrap;-webkit-flex-wrap:wrap}
+.justifylex{justify-content:space-between;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify}
+.bottomflex{-webkit-box-align:end;-webkit-flex-align:end;-ms-flex-align:end;-webkit-align-items:end;align-items:end}
+.topflex{-webkit-box-align:start;-webkit-flex-align:start;-ms-flex-align:start;-webkit-align-items:start;align-items:start}
+.rightflex{justify-content:flex-end;-webkit-box-pack:right;-webkit-justify-content:flex-end;-ms-flex-pack:right}
+.leftflex{justify-content:flex-start;-webkit-box-pack:left;-webkit-justify-content:flex-start;-ms-flex-pack:left}
+.centerflex{justify-content:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center}
+.topbottomflex{-webkit-box-align:center;-webkit-flex-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center}
+.max-width img{max-width: 100%;width: 100%;height: auto;}
+/*Cat chuoi*/
+.cut_string1{text-align:left;white-space:inherit;line-height:22px;max-height:26px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
+.cut_string2{text-align:left;white-space:inherit;line-height:22px;max-height:51px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.cut_string3{text-align:left;white-space:inherit;line-height:22px;max-height:76px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+.cut_string4{text-align:left;white-space:inherit;line-height:22px;max-height:101px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical}
+.cut_string5{text-align:left;white-space:inherit;line-height:22px;max-height:126px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical}
+.cut_string6{text-align:left;white-space:inherit;line-height:22px;max-height:151px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical}
+.cut_string7{text-align:left;white-space:inherit;line-height:22px;max-height:176px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical}
+.cut_string8{text-align:left;white-space:inherit;line-height:22px;max-height:201px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical}
+.cut_string9{text-align:left;white-space:inherit;line-height:22px;max-height:226px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:9;-webkit-box-orient:vertical}
+.cut_string10{text-align:left;white-space:inherit;line-height:22px;max-height:251px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:10;-webkit-box-orient:vertical}
+.cut_stringcenter{text-align:center!important}
+.cut_stringjustify{text-align:justify!important}
+.cut_stringright{text-align:right!important}
 
 img { max-width: 100%; height: auto; vertical-align: top; }
 
@@ -925,6 +1001,80 @@ coccocgrammar { display: none; }
 
 /* Transition All */
 .transition, .control-owl button, .carousel-comment-media .carousel-control a span, .menu ul li a.has-child:after, .menu ul li ul, .menu ul li:hover > ul, .scale-img img, .scale-img:hover > img, .btn-frame .kenit-alo-circle-fill, .support-online .kenit-alo-circle-fill { -webkit-transition: 0.3s all; transition: 0.3s all; }
+.hover_sang{overflow:hidden;position:relative;display: block;}
+.hover_sang:before {position: absolute;content: '';width: 100%;height: 100%;top: 0;left: 0;z-index: 1;-webkit-transition: all 0.4s ease-in-out;transition: all 0.4s ease-in-out;-moz-transition: all 0.4s ease-in-out;-ms-transition: all 0.4s ease-in-out;-o-transition: all 0.4s ease-in-out;}
+.hover_sang:after {position: absolute;content: '';width: 100%;height: 100%;top: 0;left: 0;-webkit-transition: all 0.4s ease-in-out;transition: all 0.4s ease-in-out;-moz-transition: all 0.4s ease-in-out;-ms-transition: all 0.4s ease-in-out;-o-transition: all 0.4s ease-in-out;}
+.hover_sang:hover:before {right: 50%;left: 50%;width: 0;background: rgba(255, 255, 255, 0.5);}
+.hover_sang:hover:after {height: 0;top: 50%;bottom: 50%;background: rgba(255, 255, 255, 0.5);}
+/* 
+    ===== Effect 10 =====
+*/
+.effect10 {
+  position: relative;
+  overflow: hidden;
+}
+.hover-glass:hover:before {
+  -webkit-animation: shine .75s;
+  animation: shine .75s;
+}
+.hover-glass img {
+  width: 100%;
+  transition: ease 0.3s;
+  display: block;
+}
+.hover-glass:hover:before {
+-webkit-animation: shine .75s;
+  animation: shine .75s;
+}
+
+@-webkit-keyframes shine {
+100% {
+left: 125%;
+}
+}
+@keyframes shine {
+100% {
+left: 125%;
+}
+}
+.hover-glass {
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+.hover-glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -83%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
+}
+/* Shine effect */
+.effect10:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -80%;
+  display: block;
+  width: 50%;
+  height: 100%;
+  z-index: 9;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .2) 100%);
+  transform: skewX(-25deg);
+  transition: left .6s;
+}
+
+.effect10:hover:before {
+  left: 125%;
+}
 
 /* Scale IMG */
 .scale-img { overflow: hidden; display: block; }

@@ -94,30 +94,17 @@ $requick = array(
     /* Sản phẩm */
     array("tbl" => "product_list", "field" => "idl", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
     array("tbl" => "product_cat", "field" => "idc", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
-    array("tbl" => "product_item", "field" => "idi", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
-    array("tbl" => "product_sub", "field" => "ids", "source" => "product", "com" => "san-pham", "type" => "san-pham"),
-    array("tbl" => "product_brand", "field" => "idb", "source" => "product", "com" => "thuong-hieu", "type" => "san-pham"),
     array("tbl" => "product", "field" => "id", "source" => "product", "com" => "san-pham", "type" => "san-pham", "menu" => true),
-
-    /* Tags */
-    array("tbl" => "tags", "tbltag" => "product", "field" => "id", "source" => "tags", "com" => "tags-san-pham", "type" => "san-pham", "menu" => true),
-    array("tbl" => "tags", "tbltag" => "news", "field" => "id", "source" => "tags", "com" => "tags-tin-tuc", "type" => "tin-tuc", "menu" => true),
-
-    /* Thư viện ảnh */
-    array("tbl" => "product", "field" => "id", "source" => "product", "com" => "thu-vien-anh", "type" => "thu-vien-anh", "menu" => true),
 
     /* Video */
     array("tbl" => "photo", "field" => "id", "source" => "video", "com" => "video", "type" => "video", "menu" => true),
 
     /* Tin tức */
-    array("tbl" => "news_list", "field" => "idl", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
-    array("tbl" => "news_cat", "field" => "idc", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
-    array("tbl" => "news_item", "field" => "idi", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
-    array("tbl" => "news_sub", "field" => "ids", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc"),
     array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tin-tuc", "type" => "tin-tuc", "menu" => true),
 
     /* Bài viết */
-    array("tbl" => "news", "field" => "id", "source" => "news", "com" => "tuyen-dung", "type" => "tuyen-dung", "menu" => true),
+    array("tbl" => "news", "field" => "id", "source" => "news", "com" => "du-an", "type" => "du-an", "menu" => true),
+    
     array("tbl" => "news", "field" => "id", "source" => "news", "com" => "chinh-sach", "type" => "chinh-sach", "menu" => false),
 
     /* Trang tĩnh */
@@ -173,12 +160,12 @@ switch ($com) {
         $titleMain = tintuc;
         break;
 
-    case 'tuyen-dung':
+    case 'du-an':
         $source = "news";
         $template = isset($_GET['id']) ? "news/news_detail" : "news/news";
         $seo->set('type', isset($_GET['id']) ? "article" : "object");
         $type = $com;
-        $titleMain = tuyendung;
+        $titleMain = "Dự án";
         break;
 
     case 'chinh-sach':
@@ -186,14 +173,6 @@ switch ($com) {
         $template = isset($_GET['id']) ? "news/news_detail" : "";
         $seo->set('type', 'article');
         $type = $com;
-        $titleMain = null;
-        break;
-
-    case 'thuong-hieu':
-        $source = "product";
-        $template = "product/product";
-        $seo->set('type', 'object');
-        $type = 'san-pham';
         $titleMain = null;
         break;
 
@@ -212,32 +191,6 @@ switch ($com) {
         $titleMain = timkiem;
         break;
 
-    case 'tags-san-pham':
-        $source = "tags";
-        $template = "product/product";
-        $type = $urlType;
-        $table = $urlTblTag;
-        $seo->set('type', 'object');
-        $titleMain = null;
-        break;
-
-    case 'tags-tin-tuc':
-        $source = "tags";
-        $template = "news/news";
-        $type = $urlType;
-        $table = $urlTblTag;
-        $seo->set('type', 'object');
-        $titleMain = null;
-        break;
-
-    case 'thu-vien-anh':
-        $source = "product";
-        $template = isset($_GET['id']) ? "album/album_detail" : "album/album";
-        $seo->set('type', isset($_GET['id']) ? "article" : "object");
-        $type = $com;
-        $titleMain = thuvienanh;
-        break;
-
     case 'video':
         $source = "video";
         $template = "video/video";
@@ -251,10 +204,6 @@ switch ($com) {
         $template = 'order/order';
         $titleMain = giohang;
         $seo->set('type', 'object');
-        break;
-
-    case 'account':
-        $source = "user";
         break;
 
     case 'ngon-ngu':
