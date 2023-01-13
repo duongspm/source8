@@ -2,11 +2,11 @@
 /* Tin tức */
 $nametype = "tin-tuc";
 $config['news'][$nametype]['title_main'] = "Tin tức";
-$config['news'][$nametype]['dropdown'] = true;
-$config['news'][$nametype]['list'] = true;
-$config['news'][$nametype]['cat'] = true;
-$config['news'][$nametype]['item'] = true;
-$config['news'][$nametype]['sub'] = true;
+$config['news'][$nametype]['dropdown'] = false;
+$config['news'][$nametype]['list'] = false;
+$config['news'][$nametype]['cat'] = false;
+$config['news'][$nametype]['item'] = false;
+$config['news'][$nametype]['sub'] = false;
 $config['news'][$nametype]['tags'] = true;
 $config['news'][$nametype]['view'] = true;
 $config['news'][$nametype]['copy'] = true;

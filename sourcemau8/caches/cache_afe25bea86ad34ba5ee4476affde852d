@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 a:2:{i:0;i:1673607724;i:1;a:2:{i:0;a:4:{s:6:"namevi";s:15:"Giày giá rẻ";s:6:"slugvi";s:11:"giay-gia-re";s:6:"slugen";s:11:"cheap-shoes";s:2:"id";s:1:"1";}i:1;a:4:{s:6:"namevi";s:19:"Guốc đế thấp";s:6:"slugvi";s:12:"guoc-de-thap";s:6:"slugen";s:14:"low-base-clogs";s:2:"id";s:1:"2";}}}
+=======
+a:2:{i:0;i:1672908403;i:1;a:2:{i:0;a:4:{s:6:"namevi";s:15:"Giày giá rẻ";s:6:"slugvi";s:11:"giay-gia-re";s:6:"slugen";s:11:"cheap-shoes";s:2:"id";i:1;}i:1;a:4:{s:6:"namevi";s:19:"Guốc đế thấp";s:6:"slugvi";s:12:"guoc-de-thap";s:6:"slugen";s:14:"low-base-clogs";s:2:"id";i:2;}}}
+>>>>>>> 4325a9bd3e8c34c2f7b7bce63deab369e55c3f7e
