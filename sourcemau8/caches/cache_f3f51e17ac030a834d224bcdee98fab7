@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+a:2:{i:0;i:1673607718;i:1;a:3:{s:2:"id";s:1:"3";s:5:"photo";s:13:"logo-3726.png";s:7:"options";s:52:"{"p":"logo-3726.png","w":92,"h":78,"m":"image\/png"}";}}
+=======
 a:2:{i:0;i:1672908403;i:1;a:3:{s:2:"id";i:3;s:5:"photo";s:13:"logo-3726.png";s:7:"options";s:52:"{"p":"logo-3726.png","w":92,"h":78,"m":"image\/png"}";}}
+>>>>>>> 4325a9bd3e8c34c2f7b7bce63deab369e55c3f7e

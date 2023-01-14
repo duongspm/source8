@@ -113,12 +113,13 @@ class Functions
             /*
 					// Loại bỏ HTML tags
 					'@<[\/\!]*?[^<>]*?>@si',
-				*/
+*/
 
-            $search = array(
-                'script' => '@<script[^>]*?>.*?</script>@si',
-                'style' => '@<style[^>]*?>.*?</style>@siU',
-                'blank' => '@<![\s\S]*?--[ \t\n\r]*>@',
+$search = array(
+'script' => '@<script[^>]*?>.*?</script>@si',
+    'style' => '@<style[^>]*?>.*?</style>@siU',
+        'blank' => '@
+        <![\s\S]*?--[ \t\n\r]*>@',
                 'iframe' => '/<iframe(.*?)<\/iframe>/is',
                 'title' => '/<title(.*?)<\/title>/is',
                 'pre' => '/<pre(.*?)<\/pre>/is',
@@ -332,7 +333,13 @@ class Functions
             return $matches[1] . $dash . $matches[2] . $dash . $matches[3];
         }
     }
-
+    /* Format phone */
+    public function formatPhone2($number, $dash = '.')
+    {
+        if (preg_match('/^(\d{4})(\d{3})(\d{3})$/', $number, $matches) || preg_match('/^(\d{3})(\d{4})(\d{4})$/', $number, $matches)) {
+            return $matches[1] . $dash . $matches[2] . $dash . $matches[3];
+        }
+    }
     /* Parse phone */
     public function parsePhone($number)
     {
