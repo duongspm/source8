@@ -1,0 +1,25 @@
+news
+	khóa học
+	tài liệu
+	giáo viên
+	tin tức
+newsletter
+
+photo
+	logo
+	slide
+	banner
+	social
+product
+	thuvienanh
+static
+	liên hệ
+	gioithieu
+	footer
+
+
+
+-------------------------news
+
+
+-------------------------news
