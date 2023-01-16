@@ -23,7 +23,18 @@ NN_FRAMEWORK.loadNameInputFile = function () {
 		});
 	}
 };
-
+NN_FRAMEWORK.peShiner = () => {
+    if ($(".peShiner").length) {
+        var api = $(".peShiner").peShiner({
+            api: true,
+            paused: true,
+            reverse: true,
+            repeat: 1,
+            color: "fireHL",
+        }); /*monoHL, oceanHL, fireHL*/
+        api.resume();
+    };
+};
 /* Back to top */
 NN_FRAMEWORK.GoTop = function () {
 	$(window).scroll(function () {
@@ -367,6 +378,28 @@ NN_FRAMEWORK.OwlPage = function () {
 	}
 };
 
+NN_FRAMEWORK.SlickAlbum = function () {
+	$('.slickAlbum').slick({
+		rows: 2,
+		dots: false,
+		arrows: true,
+		infinite: true,
+		speed: 300,
+		slidesToShow: 3,
+		slidesToScroll: 3
+	});
+};
+
+NN_FRAMEWORK.SlickBlog = function () {
+	$('.slickBlog').slick({
+		rows: 1,
+		autoplay: false,
+		speed: 300,
+		slidesToShow: 3,
+		slidesToScroll: 1
+	});
+};
+
 /* Dom Change */
 NN_FRAMEWORK.DomChange = function () {
 	/* Video Fotorama */
@@ -613,12 +646,15 @@ $(document).ready(function () {
 	NN_FRAMEWORK.Tools();
 	NN_FRAMEWORK.Popup();
 	NN_FRAMEWORK.Wows();
+	NN_FRAMEWORK.SlickAlbum();
+	NN_FRAMEWORK.SlickBlog();
 	NN_FRAMEWORK.AltImg();
 	NN_FRAMEWORK.GoTop();
 	NN_FRAMEWORK.Menu();
 	NN_FRAMEWORK.OwlPage();
 	NN_FRAMEWORK.Pagings();
 	NN_FRAMEWORK.Cart();
+	NN_FRAMEWORK.peShiner();
 	NN_FRAMEWORK.Videos();
 	NN_FRAMEWORK.Photobox();
 	NN_FRAMEWORK.Comment();

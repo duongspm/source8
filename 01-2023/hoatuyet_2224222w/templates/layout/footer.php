@@ -1,69 +1,38 @@
 <div class="footer">
     <div class="footer-article">
         <div class="wrap-content">
-            <div class="row">
-                <div class="footer-news col-sm-4">
-                    <h2 class="footer-title"><?= $footer['name' . $lang] ?></h2>
+            <div class="footerr">
+                <div class="footer-news">
+                    <h2 class="footer-title">thông tin liên hệ</h2>
                     <div class="footer-info"><?= $func->decodeHtmlChars($footer['content' . $lang]) ?></div>
+                    <div class="footer-social">
+                        <?php if(!empty($socialfooter)){foreach($socialfooter as $v) {?>
+                            <a href="<?=$v['link']?>" class="text-decoration-none social-item">
+                                <?= $func->getImage(['sizes' => '27x27x1', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $setting['name' . $lang]]) ?>
+                            </a>
+                        <?php }}?>
+                    </div>
                 </div>
-                <div class="footer-news col-sm-2">
-                    <h2 class="footer-title"><?= chinhsach ?></h2>
-                    <ul class="footer-ul">
-                        <?php foreach ($policy as $v) { ?>
-                            <li><a href="<?= $v[$sluglang] ?>" title="<?= $v['name' . $lang] ?>"><?= $v['name' . $lang] ?></a></li>
-                        <?php } ?>
-                    </ul>
-                </div>
-                <div class="footer-news col-sm-3">
-                    <h2 class="footer-title"><?= dangkynhantin ?></h2>
-                    <p class="newsletter-slogan"><?= slogandangkynhantin ?></p>
-                    <form class="validation-newsletter" novalidate method="post" action="" enctype="multipart/form-data">
-                        <div class="newsletter-input">
-                            <input type="email" class="form-control text-sm" id="email-newsletter" name="dataNewsletter[email]" placeholder="<?= nhapemail ?>" required />
-                            <div class="invalid-feedback"><?= vuilongnhapdiachiemail ?></div>
+                <div class="footer-news">
+                    <div class="footer__middle">
+                        <div class="footer__logo peShiner">
+                        <?= $func->getImage(['sizes' => '148x139x2', 'upload' => UPLOAD_PHOTO_L, 'image' => $logo['photo'], 'alt' => $setting['name' . $lang]]) ?>
                         </div>
-                        <div class="newsletter-button">
-                            <input type="submit" class="btn btn-sm btn-danger w-100" value="<?= gui ?>" disabled>
-                            <input type="hidden" name="submit-newsletter" value="1">
-                            <input type="hidden" name="recaptcha_response_newsletter" id="recaptchaResponseNewsletter">
-                        </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="footer-news col-sm-3">
+
+                <div class="footer-news footer-fb">
                     <h2 class="footer-title">Fanpage facebook</h2>
                     <?= $addons->set('fanpage-facebook', 'fanpage-facebook', 2); ?>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer-tags">
-        <div class="wrap-content">
-            <p class="footer-title">Tags sản phẩm:</p>
-            <ul class="footer-tags-lists w-clear mb-3">
-                <?php foreach ($tagsProduct as $v) { ?>
-                    <li class="mr-1 mb-1"><a class="btn btn-sm btn-danger rounded" href="<?= $v[$sluglang] ?>" target="_blank" title="<?= $v['name' . $lang] ?>"><?= $v['name' . $lang] ?></a></li>
-                <?php } ?>
-            </ul>
-            <p class="footer-title">Tags tin tức:</p>
-            <ul class="footer-tags-lists w-clear">
-                <?php foreach ($tagsNews as $v) { ?>
-                    <li class="mr-1 mb-1"><a class="btn btn-sm btn-danger rounded" href="<?= $v[$sluglang] ?>" target="_blank" title="<?= $v['name' . $lang] ?>"><?= $v['name' . $lang] ?></a></li>
-                <?php } ?>
-            </ul>
-        </div>
-    </div>
+
     <div class="footer-powered">
         <div class="wrap-content">
             <div class="row">
-                <div class="footer-copyright col-md-6">2020 Copyright Sneaker Shoes. Design by Nina.vn</div>
-                <div class="footer-statistic col-md-6">
-                    <span><?= dangonline ?>: <?= $online ?></span>
-                    <span><?= homnay ?>: <?= $counter['today'] ?></span>
-                    <span><?= homqua ?>: <?= $counter['yesterday'] ?></span>
-                    <span><?= trongtuan ?>: <?= $counter['week'] ?></span>
-                    <span><?= trongthang ?>: <?= $counter['month'] ?></span>
-                    <span><?= tongtruycap ?>: <?= $counter['total'] ?></span>
-                </div>
+                <div class="footer-copyright col-md-12">Copyright. Design by Nina.vn</div>
             </div>
         </div>
     </div>

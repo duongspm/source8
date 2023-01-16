@@ -32,7 +32,7 @@
                 data-items="screen:0|items:1|margin:10,screen:425|items:1|margin:10,screen:575|items:1|margin:20,screen:767|items:2|margin:20,screen:991|items:3|margin:35,screen:1199|items:3|margin:35"
                 data-rewind="1" data-autoplay="0" data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1"
                 data-smartspeed="500" data-autoplayspeed="3500" data-dots="0" data-nav="1"
-                data-navcontainer=".control-brand">
+                data-navcontainer=".control-khoahoc">
                 <?php foreach ($khoahoc as $v) { ?>
                 <div>
                     <div class="khoahoc__item">
@@ -53,98 +53,150 @@
                 </div>
                 <?php } ?>
             </div>
+            <div class="control-khoahoc control-owl transition"></div>
         </div>
     </div>
 </div>
 <?php } ?>
-
-<?php if (count($pronb)) { ?>
-<div class="wrap-product wrap-content">
-    <div class="title-main"><span>Sản phẩm nổi bật</span></div>
-    <div class="paging-product"></div>
-</div>
-<?php } ?>
-
-<?php if (count($splistnb)) {
-    foreach ($splistnb as $vlist) { ?>
-<div class="wrap-product wrap-content">
-    <div class="title-main"><span><?= $vlist['name' . $lang] ?></span></div>
-    <div class="paging-product-category paging-product-category-<?= $vlist['id'] ?>" data-list="<?= $vlist['id'] ?>">
-    </div>
-</div>
-<?php }
-} ?>
-
-<div class="wrap-intro mb-5">
-    <div class="wrap-content py-5">
-        <div class="title-main"><span>Video clip - tin tức</span></div>
-        <div class="row">
-            <div class="col-6">
-                <?php if (!empty($newsnb)) { ?>
-                <div class="news-intro position-relative">
-                    <span class="news-control position-absolute transition" id="up"><i
-                            class="fas fa-chevron-up"></i></span>
-                    <span class="news-control position-absolute transition" id="down"><i
-                            class="fas fa-chevron-down"></i></span>
-                    <div class="news-scroll position-relative">
-                        <ul class="list-unstyled p-0 m-0">
-                            <?php foreach ($newsnb as $v) { ?>
-                            <li>
-                                <div class="news-shadow">
-                                    <div class="news-shadow-time position-relative text-capitalize text-center">
-                                        <span class="d-block"><?= $func->makeDate($v['date_created']) ?></span>
-                                        <span class="d-block"><?= date("d/m/Y", $v['date_created']) ?></span>
-                                    </div>
-                                    <div class="news-shadow-article position-relative">
-                                        <a class="news-shadow-image rounded-circle scale-img"
-                                            href="<?= $v[$sluglang] ?>" title="<?= $v['name' . $lang] ?>">
-                                            <?= $func->getImage(['class' => 'lazy w-100', 'sizes' => '90x90x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]) ?>
-                                        </a>
-                                        <div class="news-shadow-info">
-                                            <h3 class="news-shadow-name">
-                                                <a class="text-decoration-none transition text-split"
-                                                    href="<?= $v[$sluglang] ?>"
-                                                    title="<?= $v['name' . $lang] ?>"><?= $v['name' . $lang] ?></a>
-                                            </h3>
-                                            <div class="news-shadow-desc text-split">
-                                                <?= $v['desc' . $lang] ?></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <?php } ?>
-                        </ul>
+<?php if (count($giaovien)) { ?>
+<div class="giaovien pd">
+    <div class="wrapper">
+        <div class="heading">
+            <span>Giáo viên tại <?=$setting['name'.$lang]?></span>
+        </div>
+        <div class="giaovien__list">
+    
+            <?php for ($i=0; $i < 4; $i++) { 
+            
+            if (!empty($giaovien[$i])) {?>
+                <div class="giaovien__item ">
+                    <div class="giaovien__img">
+                        <?= $func->getImage(['class' => 'lazy w-100', 'sizes' => '250x250x1', 'upload' => UPLOAD_NEWS_L, 'image' => $giaovien[$i]['photo'], 'alt' => $giaovien[$i]['name' . $lang]]) ?>
+                    </div>
+                    <div class="giaovien__content">
+                        <span class="giaovien__name">
+                            <?=$giaovien[$i]['name'.$lang]?>
+                        </span><span class="giaovien__desc">
+                            <?=$giaovien[$i]['desc'.$lang]?>
+                        </span>
                     </div>
                 </div>
-                <?php } ?>
-            </div>
-            <div class="col-6">
-                <div class="video-intro">
-                    <?= $addons->set('video-fotorama', 'video-fotorama', 4); ?>
-                    <?php /* $addons->set('video-select', 'video-select', 4); */ ?>
-                </div>
-            </div>
+
+            <?php } }?>
+    
         </div>
+        <?php if(count($giaovien)>4){?>
+        <div class="giaovien__xemthem">
+            <a href="giao-vien" class="text-decoration-none buttond">Xem Thêm</a>
+        </div>
+        <?php } ?>
+
     </div>
 </div>
-
-<?php if (count($partner)) { ?>
-<div class="wrap-partner">
-    <div class="wrap-content">
-        <div class="owl-page owl-carousel owl-theme"
-            data-items="screen:0|items:2|margin:10,screen:425|items:3|margin:10,screen:575|items:4|margin:10,screen:767|items:4|margin:10,screen:991|items:5|margin:10,screen:1199|items:7|margin:10"
-            data-rewind="1" data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1"
-            data-smartspeed="300" data-autoplayspeed="500" data-autoplaytimeout="3500" data-dots="0" data-nav="1"
-            data-navcontainer=".control-partner">
-            <?php foreach ($partner as $v) { ?>
-            <div>
-                <a class="partner" href="<?= $v['link'] ?>" target="_blank" title="<?= $v['name' . $lang] ?>">
-                    <?= $func->getImage(['class' => 'lazy w-100', 'sizes' => '150x120x2', 'upload' => UPLOAD_PHOTO_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]) ?>
-                </a>
+<?php } ?>
+<div class="hinhanh">
+    <div class="wrapper pd">
+        <div class="hinhanh__list">
+            <?php if(!empty($thuvienanh)){?>
+            <div class="slickAlbum">
+                <?php foreach($thuvienanh as $v){?>
+                    <div>
+                        <div class="albumd">
+                            <a class="albumd-image scale-img" href="<?= $v[$sluglang] ?>" title="<?= $v['name' . $lang] ?>">
+                                <?= $func->getImage(['class' => 'lazy w-100', 'sizes' => '335x232x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]) ?>
+                            </a>
+                        </div>
+                    </div>
+                <?php } ?>
             </div>
             <?php } ?>
         </div>
-        <div class="control-partner control-owl transition"></div>
     </div>
 </div>
-<?php } ?>
+
+<div class="blog">
+    <div class="wrapper pd">
+        <?php if(!empty($newsnb)){?>
+        <div class="blog__list">
+            <?php for ($i=0; $i < 3; $i++) { if(!empty($newsnb[$i])){?>
+
+                <section class="card-section">
+                <div class="card">
+                    <div class="flip-card">
+                        <div class="flip-card__container">
+                            <div class="card-front">
+                                <div class="card-front__tp card-front__tp--beach">
+    
+                               
+                                               <h2 class="card-front__heading">
+                                                   <?=$newsnb[$i]['name'.$lang]?>
+                                               </h2>
+                                               <p class="card-front__text-price cut_string2">
+                                                <?=$newsnb[$i]['desc'.$lang]?>
+
+                                               </p>
+                                </div>
+
+                                <div class="card-front__bt">
+                                    <p class="card-front__text-view card-front__text-view--beach">
+                                        Xem thêm
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                            <?= $func->getImage(['class' => 'lazy w-100', 'sizes' => '335x230x1', 'upload' => UPLOAD_NEWS_L, 'image' => $newsnb[$i]['photo'], 'alt' => $newsnb[$i]['name' . $lang]]) ?>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inside-page">
+                        <div class="inside-page__container">
+                            <h3 class="inside-page__heading inside-page__heading--beach">
+                            <?=$newsnb[$i]['name'.$lang]?>
+
+                            </h3>
+                            <p class="inside-page__text cut_string3">
+                            <?=$newsnb[$i]['desc'.$lang]?>
+                            </p>
+                            <a href="#" class="inside-page__btn inside-page__btn--beach">Xem thêm</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <?php } }?>
+        </div>
+        <?php } ?>
+    </div>
+</div>
+<div class="wrapper">
+    <div class="pd">
+        <div class="blog__list1">
+            <?php if(!empty($newsnb)){?>
+            <div class="slickBlog">
+                <?php foreach ($newsnb as $v) { ?>
+                    <div>
+                        <div class="blog__item">
+                            <div class="blog__img">
+                                <?= $func->getImage(['class' => '', 'sizes' => '335x230x1', 'upload' => UPLOAD_NEWS_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]) ?>
+                            </div>
+                            <div class="blog__date">
+                                <span><?= date("d", $v['date_created']) ?> tháng <?= date("m Y", $v['date_created']) ?></span>
+                            </div>
+                            <div class="blog__content">
+                                <span class="blog__name">
+                                    <?=$v['name' . $lang]?>
+                                </span>
+                                <span class="blog__desc">
+                                    <?=$v['desc' . $lang]?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+                
+            <?php } ?>
+        </div>
+    </div>
+</div>

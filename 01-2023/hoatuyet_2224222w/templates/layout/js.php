@@ -21,6 +21,7 @@
 <!-- Js Files -->
 <?php
 $js->set("js/jquery.min.js");
+$js->set("js/peshiner.js");
 $js->set("js/lazyload.min.js");
 $js->set("bootstrap/bootstrap.js");
 $js->set("js/wow.min.js");
@@ -31,7 +32,7 @@ $js->set("easyticker/easy-ticker.js");
 $js->set("fotorama/fotorama.js");
 $js->set("owlcarousel2/owl.carousel.js");
 $js->set("magiczoomplus/magiczoomplus.js");
-// $js->set("slick/slick.js");
+$js->set("slick/slick.js");
 $js->set("fancybox3/jquery.fancybox.js");
 $js->set("photobox/photobox.js");
 $js->set("simplenotify/simple-notify.js");
